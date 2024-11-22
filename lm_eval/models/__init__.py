@@ -1,6 +1,7 @@
 from . import (
     anthropic_llms,
     api_models,
+    custom_lm,
     dummy,
     gguf,
     hf_vlms,
