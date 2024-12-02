@@ -24,12 +24,8 @@ class TorchLLM(TemplateLM):
     ) -> None:
         super().__init__()
 
-        # workaround for = in checkpoint names (conflicts with arg parsing)
-        base_path = base_path.replace("≈", "=")
-
         ckpt_paths = [base_path]
         if lora_path:
-            lora_path = lora_path.replace("≈", "=")
             ckpt_paths.append(lora_path)
 
         model, tokenizer, template_config = utils.setup_model_and_tokenizer(
