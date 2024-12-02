@@ -8,6 +8,7 @@ import json
 import logging
 import os
 import re
+from ast import literal_eval
 from dataclasses import asdict, is_dataclass
 from itertools import islice
 from typing import Any, Callable, List
@@ -60,6 +61,11 @@ def escaped_split(text, sep_char, maxsplit=-1):
 
 
 def handle_arg_string(arg):
+    try:
+        return literal_eval(arg)
+    except:
+        pass
+
     if arg.lower() == "true":
         return True
     elif arg.lower() == "false":
