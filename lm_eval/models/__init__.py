@@ -13,7 +13,7 @@ from . import (
     openai_completions,
     optimum_lm,
     textsynth,
-    torch_llms,
+    torchllms,
     vllm_causallms,
     vllm_vlms,
 )

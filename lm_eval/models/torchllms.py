@@ -1,7 +1,6 @@
 from typing import Dict, List, Tuple
 
 import torch
-from torch_llms.models import utils
 from tqdm import tqdm
 
 from lm_eval.api.instance import Instance
@@ -9,8 +8,8 @@ from lm_eval.api.model import TemplateLM
 from lm_eval.api.registry import register_model
 
 
-@register_model("torch_llms")
-class TorchLLM(TemplateLM):
+@register_model("torchllms")
+class torchllms(TemplateLM):
     def __init__(
         self,
         base_path,
@@ -23,6 +22,8 @@ class TorchLLM(TemplateLM):
         add_bos_token=False,
     ) -> None:
         super().__init__()
+
+        from torchllms.models import utils
 
         ckpt_paths = [base_path]
         if lora_path:
