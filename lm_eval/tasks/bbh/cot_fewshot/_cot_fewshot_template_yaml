@@ -7,8 +7,8 @@ metric_list:
   - metric: exact_match
     aggregation: mean
     higher_is_better: true
-    # ignore_case: true
-    # ignore_punctuation: true
+    ignore_case: true
+    ignore_punctuation: true
 generation_kwargs:
   max_gen_toks: 1024
   until:
@@ -20,7 +20,7 @@ filter_list:
     filter:
       - function: "regex"
         regex_pattern: "(?<=the answer is )(.*)(?=.)"
-      - function: "take_first"
+      - function: "take_last"
 num_fewshot: 3
 metadata:
   version: 4.0

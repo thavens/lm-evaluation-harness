@@ -5,28 +5,38 @@ task:
     task:
       - mmlu_flan_cot_zeroshot_stem
     aggregate_metric_list:
-      - metric: acc
+      - metric: exact_match
+        aggregation: mean
         weight_by_size: True
+        filter_list: flexible-extract
   - group: other
     task:
       - mmlu_flan_cot_zeroshot_other
     aggregate_metric_list:
-      - metric: acc
+      - metric: exact_match
+        aggregation: mean
         weight_by_size: True
+        filter_list: flexible-extract
   - group: social sciences
     task:
       - mmlu_flan_cot_zeroshot_social_sciences
     aggregate_metric_list:
-      - metric: acc
+      - metric: exact_match
+        aggregation: mean
         weight_by_size: True
+        filter_list: flexible-extract
   - group: humanities
     task:
       - mmlu_flan_cot_zeroshot_humanities
     aggregate_metric_list:
-      - metric: acc
+      - metric: exact_match
+        aggregation: mean
         weight_by_size: True
+        filter_list: flexible-extract
 aggregate_metric_list:
-  - metric: acc
+  - metric: exact_match
+    aggregation: mean
     weight_by_size: True
+    filter_list: flexible-extract
 metadata:
   version: 2

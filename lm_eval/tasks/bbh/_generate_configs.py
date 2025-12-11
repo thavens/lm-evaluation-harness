@@ -30,7 +30,7 @@ if __name__ == "__main__":
     with open(args.base_yaml_path, encoding="utf-8") as f:
         base_yaml = yaml.full_load(f)
 
-    base_doc_to_text = "Q: {{input}}\nA:"
+    base_doc_to_text = "Solve the following question. **All answers must contain the final statement verbatim \"So the answer is {option}.\".**\n\n{{input}}"
     answer_regex = re.compile("(?<=answer is )(.*)(?=.)")
 
     dataset_path = "lukaemon/bbh"
